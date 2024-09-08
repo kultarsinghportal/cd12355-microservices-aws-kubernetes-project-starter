@@ -54,3 +54,4 @@ spec:
               name: my-postgres-db-password
               key: DB_PASSWORD
       restartPolicy: Always
+      
