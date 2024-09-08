@@ -6,10 +6,10 @@ FROM public.ecr.aws/docker/library/python:3.10-slim-buster
 WORKDIR /app
 
 # Copy the current directory contents to the container at /app
-COPY analytics/ /app/
+COPY analytics/ /app/analytics/
 
 # Install dependencies from requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/analytics/requirements.txt
 
 # Expose port 5000
 EXPOSE 5153
@@ -22,5 +22,5 @@ ENV DB_PORT=5432
 ENV DB_NAME=postgres
 
 # Run the application when the container starts
-CMD ["python", "app/app.py"]
+CMD ["python", "analytics/app.py"]
 
